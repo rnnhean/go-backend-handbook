@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package coin.v1;
+
+option go_package = "minicoin/api/coin/v1;coinv1";
+
+service Coin {
+  rpc Recharge(RechargeRequest) returns (RechargeResponse);
+  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse);
+}
+
+message RechargeRequest {
+  string req_id = 1; // 幂等键
+  string uid = 2;
+  int64 amount = 3;  // 正整数, 单位: 分
+}
+
+message RechargeResponse {
+  string uid = 1;
+  int64 balance = 2;
+}
+
+message GetBalanceRequest {
+  string uid = 1;
+}
+
+message GetBalanceResponse {
+  string uid = 1;
+  int64 balance = 2;
+  int64 frozen = 3;
+}

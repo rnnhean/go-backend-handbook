@@ -1,0 +1,13 @@
+var (
+    rechargeTotal = prometheus.NewCounterVec(
+        prometheus.CounterOpts{Name: "mini_coin_recharge_total", Help: "recharge count"},
+        []string{"result"},
+    )
+    rechargeLatency = prometheus.NewHistogram(
+        prometheus.HistogramOpts{Name: "mini_coin_recharge_duration_seconds", Buckets: prometheus.DefBuckets},
+    )
+)
+
+func init() {
+    prometheus.MustRegister(rechargeTotal, rechargeLatency)
+}

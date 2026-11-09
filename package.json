@@ -1,0 +1,32 @@
+{
+  "name": "go-backend-handbook",
+  "version": "1.2.1",
+  "description": "Go 后端开发全景讲义：语言、并发、数据库、缓存、消息队列、gRPC、监控告警、测试、性能、安全、部署与完整开发流程",
+  "keywords": [
+    "go",
+    "golang",
+    "backend",
+    "handbook",
+    "tutorial",
+    "mysql",
+    "redis",
+    "kafka",
+    "grpc",
+    "kubernetes"
+  ],
+  "license": "MIT",
+  "author": "hal0o0o0 <hal0o0o0@163.com>",
+  "files": [
+    "*.md",
+    "exercises/",
+    "code/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnnhean/go-backend-handbook.git"
+  },
+  "homepage": "https://github.com/rnnhean/go-backend-handbook#readme",
+  "bugs": {
+    "url": "https://github.com/rnnhean/go-backend-handbook/issues"
+  }
+}

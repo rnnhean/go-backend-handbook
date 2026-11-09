@@ -1,0 +1,9 @@
+change_id: CHG-001
+status: verified
+documents:
+  intent: intent.md
+  spec: spec.md
+  plan: plan.md
+verification:
+  - go test ./...
+  - scripts/e2e.sh

@@ -1,0 +1,12 @@
+CREATE TABLE account (
+  id         BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  uid        VARCHAR(64)     NOT NULL,
+  balance    BIGINT          NOT NULL DEFAULT 0 COMMENT '可用余额(分)',
+  frozen     BIGINT          NOT NULL DEFAULT 0 COMMENT '冻结金额(分)',
+  version    BIGINT          NOT NULL DEFAULT 0 COMMENT '乐观锁版本号',
+  status     TINYINT         NOT NULL DEFAULT 1 COMMENT '1正常 2冻结',
+  created_at DATETIME(3)     NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  updated_at DATETIME(3)     NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_uid (uid)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,8 @@
+{
+  "address": "127.0.0.1:8081",
+  "mysql_dsn": "root:course123@tcp(127.0.0.1:13306)/practice?parseTime=true",
+  "redis_addr": "127.0.0.1:6379",
+  "mq_brokers": ["127.0.0.1:9092"],
+  "log_level": "debug",
+  "features": {"new_recharge": true, "sms_notify": false}
+}

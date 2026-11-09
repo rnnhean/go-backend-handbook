@@ -1,0 +1,24 @@
+stages: [unit, integration, e2e, merge]
+
+unit:
+  stage: unit
+  script:
+    - go fmt ./... && git diff --exit-code
+    - go vet ./...
+    - go test -race -cover ./...
+
+integration:
+  stage: integration
+  script:
+    - go test -tags=integration ./...
+
+e2e:
+  stage: e2e
+  script:
+    - ./scripts/e2e.sh
+
+merge:
+  stage: merge
+  script:
+    - test -n "$CI_MERGE_REQUEST_IID"
+    - echo "all required jobs passed"

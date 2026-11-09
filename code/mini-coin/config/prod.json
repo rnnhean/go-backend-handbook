@@ -1,0 +1,8 @@
+{
+  "address": "0.0.0.0:8081",
+  "mysql_dsn": "coin_reader:${MYSQL_PASSWORD}@tcp(mysql-prod:3306)/coin?parseTime=true",
+  "redis_addr": "redis-prod:6379",
+  "mq_brokers": ["kafka-1:9092", "kafka-2:9092", "kafka-3:9092"],
+  "log_level": "info",
+  "features": {"new_recharge": true, "sms_notify": true}
+}

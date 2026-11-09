@@ -1,0 +1,12 @@
+logger, _ := zap.NewProduction()
+defer logger.Sync()
+logger.Info("recharge succeeded",
+    zap.String("req_id", reqID),
+    zap.String("uid", uid),
+    zap.Int64("amount", amount),
+)
+logger.Error("recharge failed",
+    zap.String("req_id", reqID),
+    zap.String("uid", uid),
+    zap.Error(err),
+)

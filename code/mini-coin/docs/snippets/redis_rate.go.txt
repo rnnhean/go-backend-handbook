@@ -1,0 +1,7 @@
+res, err := limiter.Allow(ctx, "recharge:"+uid, redis_rate.PerSecond(1))
+if err != nil {
+    return err
+}
+if res.Allowed == 0 {
+    return ErrTooManyRequests
+}
